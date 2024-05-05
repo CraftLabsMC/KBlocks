@@ -1,6 +1,7 @@
 package me.invalidjoker.kblocks.extensions
 
 import me.invalidjoker.kblocks.config.KBlocksConfig
+import me.invalidjoker.kblocks.conversations.Conversation
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
 
@@ -21,4 +22,8 @@ fun Player.sendMessageBlock(vararg lines: String) {
 
 fun CommandSender.sendPrefixed(message: String) {
     sendMessage(text(KBlocksConfig.prefix) + cmp(message))
+}
+
+fun Player.startConversation(maxSeconds: Int, initMessage: String, callback: (message: String?) -> Unit) {
+    Conversation(this, maxSeconds, cmp(initMessage), callback)
 }
