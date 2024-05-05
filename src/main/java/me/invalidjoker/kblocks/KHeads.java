@@ -6,7 +6,7 @@ package me.invalidjoker.kblocks;
  * <p>Heads are from <a href="https://mc-heads.net">mc-heads.net</a></p>
  * <p>Credits to <a href="https://github.com/MiraculixxT/KPaper/blob/master/src/main/java/de/miraculixx/kpaper/items/KHeads.java">MiraculixxT</a></p>
  */
-public class Heads {
+public class KHeads {
 
     /**
      * <div style="background-image:https://mc-heads.net/head/8550b7f74e9ed7633aa274ea30cc3d2e87abb36d4d1f4ca608cd44590cce0b; height:147px; width:140px"></div>
