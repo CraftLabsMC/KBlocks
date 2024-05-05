@@ -1,5 +1,7 @@
 package me.invalidjoker.kblocks
 
+import me.invalidjoker.kblocks.config.KBlocksConfig
+import me.invalidjoker.kblocks.i18n.TranslationManager
 import org.bukkit.plugin.java.JavaPlugin
 
 val KBlocksMainInstance: KBlocks get() = PluginInstance
@@ -30,6 +32,11 @@ abstract class KBlocks : JavaPlugin() {
     final override fun onLoad() {
         if (::PluginInstance.isInitialized) {
             server.logger.warning("The main instance of KPaper has been modified, even though it has already been set by another plugin!")
+        }
+
+        if (KBlocksConfig.Localization.enabled) {
+            TranslationManager.loadAll()
+            server.logger.info("Loading localization files...")
         }
         PluginInstance = this
         load()

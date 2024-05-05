@@ -7,6 +7,7 @@ import org.bukkit.NamespacedKey
 import org.bukkit.World
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
+import org.slf4j.LoggerFactory
 
 /**
  * Shortcut to get all online players.
@@ -54,3 +55,12 @@ fun pluginKey(key: String) = NamespacedKey(PluginInstance, key)
  * Shortcut to get a collection of all worlds
  */
 val worlds: List<World> get() = Bukkit.getWorlds()
+
+
+fun <T : Any> T.getLogger(): org.slf4j.Logger {
+    return LoggerFactory.getLogger(this::class.java)
+}
+
+fun <T : Any> T.nullIf(condition: (T) -> Boolean): T? {
+    return if (condition(this)) null else this
+}

@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.9.23"
 
+    `java-library`
     `maven-publish`
     id("io.papermc.paperweight.userdev") version "1.7.0"
 }
@@ -15,13 +16,11 @@ repositories {
 }
 
 dependencies {
-    paperweight.paperDevBundle("1.20.6-R0.1-SNAPSHOT")
+    paperweight.paperDevBundle("1.20.2-R0.1-SNAPSHOT")
 
     api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
     api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
     api("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.1")
-    implementation("net.kyori:adventure-text-serializer-plain:4.16.0")
-    implementation("net.kyori:adventure-text-minimessage:4.16.0")
 }
 
 
